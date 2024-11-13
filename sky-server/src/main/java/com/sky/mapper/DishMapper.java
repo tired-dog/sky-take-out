@@ -13,7 +13,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 @Mapper
-public interface dishMapper {
+public interface DishMapper {
 
     /**
      * 根据分类id查询菜品数量
