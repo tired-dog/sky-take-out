@@ -48,7 +48,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         }
         else {
         //不存在加入一条购物车数据
-
             //判断本次传过来的是菜品还是套餐
             Long dishId = shoppingCartDTO.getDishId();
             if (dishId!=null) {
@@ -70,9 +69,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             shoppingCart.setCreateTime(LocalDateTime.now());
             shoppingCartMapper.insert(shoppingCart);
         }
-
     }
-
     /**
      * 查看购物车
      * @return
@@ -86,5 +83,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
                 .build();
         List<ShoppingCart> list = shoppingCartMapper.list(shoppingCart);
         return list;
+    }
+    /**
+     * 清空购物车
+     */
+    public void cleanShoppingCart() {
+        //获取当前微信用户的id
+        Long userId = BaseContext.getCurrentId();
+        shoppingCartMapper.deleteByUserId(userId);
     }
 }
