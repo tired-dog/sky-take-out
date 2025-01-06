@@ -88,5 +88,10 @@ public interface DishMapper {
      */
     Integer countByMap(Map map);
 
+    /**
+     *根据菜品id集合批量删除菜品表中菜品数据
+     * @param ids
+     */
+    void deleteByIds(List<Long> ids);
 
 }

@@ -36,7 +36,7 @@ public interface OrderService {
      * 用户取消订单
      * @param id
      */
-    void userCancelById(Long id) throws Exception;
+    void cancel(Long id) throws Exception;
 
     /**
      * 再来一单
@@ -76,7 +76,7 @@ public interface OrderService {
      *
      * @param ordersCancelDTO
      */
-    void cancel(OrdersCancelDTO ordersCancelDTO) throws Exception;
+    void adminCancel(OrdersCancelDTO ordersCancelDTO) throws Exception;
 
     /**
      * 派送订单

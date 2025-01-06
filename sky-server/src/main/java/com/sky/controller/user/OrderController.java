@@ -12,6 +12,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.web.bind.annotation.*;
 
 @RestController("userOrderController")
@@ -100,8 +101,13 @@ public class OrderController {
      */
     @PutMapping("/cancel/{id}")
     @ApiOperation("取消订单")
-    public Result cancel(@PathVariable("id") Long id) throws Exception {
-        orderService.userCancelById(id);
+    public Result cancel(@PathVariable Long id){
+        log.info("取消订单:{}",id);
+        try {
+            orderService.cancel(id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         return Result.success();
     }
     /**

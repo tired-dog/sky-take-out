@@ -5,12 +5,12 @@ sky:
     port: 3306
     database: sky_take_out
     username: root
-    password: 123456
+    password: 1234
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAl5tPmhypxrw3ui54FeK6q
-    access-key-secret: iilQYHHOkh6YKAKY4Z10zzXZU8q3tg
-    bucket-name: web-tlias-311
+    access-key-id: LTAI5t6tj5mgF6XPoL2Z2wUp
+    access-key-secret: AX8zekoUPAdHHJn4ATeLRQ8SueLPpm
+    bucket-name: food-take-away
   redis:
     host: localhost
     port: 6379
